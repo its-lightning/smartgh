@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Greenhouse using ESP32</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .image-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .image-container img {
+      width: 48%; /* Ensure both images fit inside the container */
+      height: auto; /* Maintain aspect ratio */
+      border: 2px solid #ccc; /* Add border to images */
+      border-radius: 5px; /* Optional rounded corners */
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better aesthetics */
+    }
+  </style>
+</head>
+<body>
+  <div class="polygon-left"></div>
+  <div class="polygon-right"></div>
+
+  <div class="container">
+    <header>
+      <h1>Smart Greenhouse using ESP32</h1>
+    </header>
+    
+
+    <section>
+      <h2>Abstract</h2>
+      <p>The Smart Greenhouse Monitoring and Control System uses an ESP32 microcontroller and various sensors (DHT11, LDR, MQ Gas, Soil Moisture, Rain) to automate greenhouse management. It monitors environmental conditions and provides both local LCD readout and a web-based interface for real-time visualization and control. Designed with PlatformIO, this system is efficient, scalable, and ideal for small-scale agricultural operations.</p>
+    </section>
+    
+    <section>
+      <h2>Introduction</h2>
+      <p>Traditional greenhouse methods rely on manual checks which are inefficient for modern agriculture. Our system uses the ESP32 to continuously monitor and manage temperature, light, gas, and soil conditions. With built-in Wi-Fi and a local web dashboard, it reduces labor, increases precision, and supports remote control of greenhouse devices.</p>
+    </section>
+    
+    <section>
+      <h2>Hardware Components</h2>
+      <ul>
+        <li><strong>ESP32:</strong> Central microcontroller with built-in Wi-Fi</li>
+        <li><strong>DHT11:</strong> Measures temperature and humidity</li>
+        <li><strong>Soil Moisture Sensor:</strong> Detects dryness for irrigation</li>
+        <li><strong>LDR:</strong> Measures light intensity</li>
+        <li><strong>MQ Gas Sensor:</strong> Detects harmful gases</li>
+        <li><strong>Rain Sensor:</strong> Identifies outdoor precipitation</li>
+        <li><strong>I2C LCD:</strong> Displays real-time sensor readings</li>
+        <li><strong>3 Relays:</strong> Control fan, pump, and buzzer</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>System Architecture</h2>
+      <p>Sensor data is read by the ESP32 and used to trigger relays based on environmental thresholds. Users connect to the ESP32’s hotspot and view a live dashboard with control buttons for each device. A fallback LCD provides on-site feedback. The system is fully automated but also supports manual override.</p>
+    </section>
+    
+    <section>
+      <h2>Web Interface Features</h2>
+      <ul>
+        <li>Real-time sensor data display (temperature, moisture, gas, light)</li>
+        <li>Relay control toggles (Fan, Pump, Buzzer)</li>
+        <li>Manual/Automatic mode toggle</li>
+        <li>Accessible through local Wi-Fi from any device</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>Automation Logic</h2>
+      <ul>
+        <li><strong>Fan:</strong> Turns on when temperature > 30°C</li>
+        <li><strong>Pump:</strong> Activates when soil moisture is low</li>
+        <li><strong>Buzzer:</strong> Triggers when gas is detected</li>
+        <li><strong>Rain Sensor:</strong> Overrides pump if rain is present</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>Results & Testing</h2>
+      <p>The system was tested in real-world conditions. It reliably maintained optimal growing environments with 97% sensor accuracy. All relay-based devices responded correctly to threshold conditions. Testing confirmed remote access and local control work in parallel.</p>
+    </section>
+    
+    <section>
+      <h2>Advantages</h2>
+      <ul>
+        <li>Fully Automated – No manual intervention required</li>
+        <li>Real-Time Monitoring – Immediate visibility of all sensors</li>
+        <li>Data-Driven Decisions – Easy analysis of environmental trends</li>
+        <li>Cost Effective – Under $20 total component cost</li>
+        <li>Modular and Scalable – Easily extendable to large farms</li>
+      </ul>
+    </section>
+
+    
+    
+    
+    <section>
+      <h2>System</h2>
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='sysarch.png') }}" alt="Placeholder Diagram" />
+        <img src="{{ url_for('static', filename='image.png') }}" alt="Diagram" />
+      </div>
+    </section>
+
+    <section>
+      <h2>Graphs</h2>
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='graph1.png') }}" alt="Graph 1">
+        <img src="{{ url_for('static', filename='graph2.png') }}" alt="Graph 2">
+      </div>
+        
+      <h2></h2>
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='graph3.png') }}" alt="Graph 3">
+        <img src="{{ url_for('static', filename='graph4.png') }}" alt="Graph 4">
+      </div>
+      
+      <h2></h2>
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='graph5.png') }}" alt="Graph 5">
+      </div>
+      
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>This ESP32-based Smart Greenhouse System provides a powerful yet affordable solution for automating agriculture. With its modular hardware and Wi-Fi capabilities, it is ideal for smart farming at small to medium scale. Real-time control, environmental responsiveness, and data-driven flexibility make this system an important step toward sustainable, tech-driven agriculture.</p>
+    </section>  
+
+    <footer>
+      <p>&copy; 2025 Smart Greenhouse Project</p>
+    </footer>
+  </div>
+</body>
+</html>
